@@ -20,9 +20,11 @@ app.use(bodyParser.json());
 app.use(cors()); 
 
 //a very simple endpoint to allow us to hit it
-app.get('/status', (req, res) => {
+//when email and passport sent to register, it sends back this message
+app.post('/register', (req, res) => {
     res.send({
-        message: 'hellow world'
+        //use the far left ` (not single/double quotes)
+        message: `Hello ${req.body.email} you have registered - have fun`
     });
 });
 
