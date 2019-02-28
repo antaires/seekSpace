@@ -7,6 +7,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const {sequelize} = require('./models');
+const config = require('./config/config');
 
 //build up an express app (this builds a basic web app server)
 const app = express();
@@ -19,14 +21,16 @@ app.use(bodyParser.json());
 //WARNING having cors enabled is a security risk that needs to be dealt with
 app.use(cors()); 
 
-//a very simple endpoint to allow us to hit it
-//when email and passport sent to register, it sends back this message
-app.post('/register', (req, res) => {
-    res.send({
-        //use the far left ` (not single/double quotes)
-        message: `Hello ${req.body.email} you have registered - have fun`
-    });
-});
+//access the routes.js, attaching app to it
+require('./routes')(app);
 
-//allows us to overwrite the given port with environment variables
-app.listen(process.env.PORT || 8081); 
+//connect sequelize to the databse it is configured for
+sequelize.sync()
+    .then(() => {
+        //allows us to overwrite the given port with environment variables
+        // app.listen(process.env.PORT || 8081); 
+
+        //this will access the config.js file to spin up server
+        app.listen(config.port);
+        console.log(`Server started on port ${config.port}`);
+    })
