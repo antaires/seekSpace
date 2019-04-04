@@ -13,6 +13,16 @@ module.exports = {
       })
     }
   },
+  async show (req, res) {
+    try {
+      const place = await Place.findById(req.params.placeId)
+      res.send(place)
+    } catch (err) {
+      res.status(500).send({
+        error: 'Error fetching place from journey'
+      })
+    }
+  },
   async post (req, res) {
     try {
       const place = await Place.create(req.body)

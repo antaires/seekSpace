@@ -4,7 +4,7 @@
       <page-header/>
       <main>
         <v-container fluid class="background">find yourself amongst the stars
-           <img src="./assets/hubble_nebula1.jpg">
+           <!--img src="./assets/hubble_nebula1.jpg"-->
           <router-view></router-view>
         </v-container>
       </main>
