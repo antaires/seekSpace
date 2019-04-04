@@ -1,18 +1,45 @@
-//user module
-//custum logic and linking to easily update and add new users to file
-//without updating somehwere else
+const Promise = require('bluebird')
+const bcrypt = Promise.promisifyAll(require('bcryptjs'))
 
-//this is a function that takes sequelize and datatypes and
-//and returns or defines a user model 
-module.exports = (sequelize, DataTypes) => 
-    sequelize.define('User',{
-        //options or attributes attached to table
-        email: {
-            type: DataTypes.STRING,
-            unique: true
-        },
-        //seondd attribute
-        password: DataTypes.STRING
+async function hashPassword (user, options) {
+  if (!user.changed('password')) {
+    return 0
+  }
+  const SALT_FACTOR = 8
+  await bcrypt.hash(user.password, SALT_FACTOR, (err, hash) => {
+    if (err) {
+      console.log(err)
+    }
+    // user.setDataValue('password', hash)
+    user.password = hash
+    console.log(user)
+  })
+}
+
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    email: {
+      type: DataTypes.STRING,
+      unique: true
+    },
+    password: DataTypes.STRING
+  }, {
+    hooks: {
+      beforeSave: hashPassword,
+      beforeCreate: hashPassword
+    }
+  })
+
+  User.prototype.comparePassword = function (password) {
+    bcrypt.compare(password, this.password, function (res, err) {
+      if (res) {
+        console.log(res)
+      } else {
+        console.log(err)
+      }
     })
+    return bcrypt.compare(password, this.password)
+  }
 
-
+  return User
+}
