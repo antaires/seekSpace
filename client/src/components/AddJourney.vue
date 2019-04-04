@@ -27,7 +27,7 @@
     <v-btn
       dark
       class="cyan"
-      @click="enter">
+      @click="create">
       enter
     </v-btn>
 
@@ -56,6 +56,10 @@ export default {
       try {
         // call API
         await JourneyService.post(this.place)
+        // return to journey page after submit
+        this.$router.push({
+          name: 'journey'
+        })
       } catch (err) {
         console.log(err)
       }
