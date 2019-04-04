@@ -40,4 +40,8 @@ export default {
   color: white;
 }
 
+.danger-alert{
+  color: red;
+}
+
 </style>

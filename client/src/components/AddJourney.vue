@@ -4,25 +4,39 @@
     <panel title="Journey Metadata">
       <v-text-field
       label="name"
+      required
+      :rules="[required]"
       v-model="place.name"
       ></v-text-field>
       <v-text-field
       label="feature"
+      required
+      :rules="[required]"
       v-model="place.feature"
       ></v-text-field>
       <v-text-field
       label="activity"
+      required
+      :rules="[required]"
       v-model="place.activity"
       ></v-text-field>
       <v-text-field
       label="imageURL"
+      required
+      :rules="[required]"
       v-model="place.imageURL"
       ></v-text-field>
       <v-text-field
       label="youtubeID"
+      required
+      :rules="[required]"
       v-model="place.youtubeID"
       ></v-text-field>
     </panel>
+
+    <div class="danger-alert" v-if="error">
+      {{error}}
+    </div>
 
     <v-btn
       dark
@@ -48,11 +62,24 @@ export default {
         activity: null,
         imageURL: null,
         youtubeID: null
-      }
+      },
+      error: null,
+      // Prevent empty fields being entered
+      required: (value) => !!value || 'Required.'
     }
   },
   methods: {
     async create () {
+      // Check everything is filled in before submitting
+      this.error = null
+      const areAllFieildsFilledIn = Object
+        .keys(this.place)
+        .every(key => !!this.place[key])
+      if (!areAllFieildsFilledIn) {
+        this.error = 'Please fill in all required fields'
+        return
+      }
+
       try {
         // call API
         await JourneyService.post(this.place)
