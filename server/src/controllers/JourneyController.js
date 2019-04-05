@@ -1,11 +1,33 @@
 const {Place} = require('../models')
+const {Op} = require('sequelize')
 
 module.exports = {
   async index (req, res) {
     try {
-      const places = await Place.findAll({
-        limit: 10
-      })
+      let places = null
+      const search = req.query.search
+      // Check search 
+      if (search) {
+        // filter based on search, using ORs, so any matches are returned
+        places = await Place.findAll({
+          // $or -> [Op.or] and $like -> [Op.like]
+          // create a map of all objects in database and search for matches containing the search
+          where: {
+            [Op.or]: [
+              'name', 'feature', 'activity'
+            ].map(key => ({
+              [key]: {
+                [Op.like]: `%${search}%`
+              }
+            }))
+          }
+        })
+      } else {
+        // Show all
+        places = await Place.findAll({
+          limit: 10
+        })
+      }
       res.send(places)
     } catch (err) {
       res.status(500).send({
