@@ -32,5 +32,19 @@ module.exports = {
         error: 'Error creating a place from journey'
       })
     }
+  },
+  async put (req, res) {
+    try {
+      const place = await Place.update(req.body, {
+        where: {
+          id: req.params.placeId
+        }
+      })
+      res.send(req.body)
+    } catch (err) {
+      res.status(500).send({
+        error: 'Error updating a place from journey'
+      })
+    }
   }
 }

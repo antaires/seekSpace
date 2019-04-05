@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Journey from '@/components/Journey'
 import AddJourney from '@/components/AddJourney'
+import EditJourney from '@/components/EditJourney'
 import ViewPlace from '@/components/ViewPlace'
 
 Vue.use(Router)
@@ -35,6 +36,11 @@ export default new Router({
       path: '/journey/add',
       name: 'journey-add',
       component: AddJourney
+    },
+    {
+      path: '/journey/:placeId/edit',
+      name: 'journey-edit',
+      component: EditJourney
     },
     {
       path: '/journey/:placeId',

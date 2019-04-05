@@ -10,5 +10,8 @@ export default {
   },
   post (place) {
     return Api().post('journey', place)
+  },
+  put (place) {
+    return Api().put(`journey/${place.id}`, place)
   }
 }

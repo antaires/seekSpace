@@ -14,6 +14,8 @@ module.exports = (app) => {
     JourneyController.index)
   app.get('/journey/:placeId',
     JourneyController.show)
+  app.put('/journey/:placeId',
+    JourneyController.put)
   app.post('/journey',
     JourneyController.post)
 }
