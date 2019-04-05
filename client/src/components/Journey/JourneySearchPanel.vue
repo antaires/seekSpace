@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import Panel from '@/components/Panel'
 export default {
   data () {
@@ -17,7 +18,8 @@ export default {
   },
   // Want to keep track of text user enters in search as they're typing
   watch: {
-    search (value) {
+    // use lodash to prevent searching database on every keystroke user enters
+    search: _.debounce(async function (value) {
       // as search value changes, push a new route
       const route = {
         name: 'journey'
@@ -29,7 +31,8 @@ export default {
         }
       }
       this.$router.push(route)
-    },
+      // delay of 700 milliseconds before searching
+    }, 700),
     // Want the search field to match the string stored above, incase a user refreshes the page
     // Accomplish this with another watcher
     '$route.query.search': {
