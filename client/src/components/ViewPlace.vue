@@ -21,7 +21,14 @@
       <!--<only visible for admin -->
       <v-btn
         slot="action"
-        @click="navigateTo({name: 'journey-edit'})"
+        :to="{
+          name:'journey-edit'
+          // , params () {
+          //  return {
+          //    placeId: place.id
+          //  }
+          // }
+        }"
         class="cyan accent-2"
         light
         absolute
@@ -74,9 +81,6 @@ export default {
     Panel
   },
   methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
   }
 }
 </script>

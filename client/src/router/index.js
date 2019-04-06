@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Main from '@/components/Main'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Journey from '@/components/Journey/Index'
@@ -15,7 +15,7 @@ export default new Router({
     {
       path: '/',
       name: 'root',
-      component: HelloWorld
+      component: Main
     },
     {
       path: '/register',
@@ -46,6 +46,11 @@ export default new Router({
       path: '/journey/:placeId',
       name: 'place',
       component: ViewPlace
+    },
+    {
+      // If user tries to navigate to path that doesn't exist, redirect them to main page
+      path: '*',
+      redirect: 'root'
     }
   ]
 })

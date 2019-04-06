@@ -1,48 +1,54 @@
 <template>
-    <v-toolbar fixed class="header_color">
+  <v-toolbar fixed class="header_color">
     <v-toolbar-title class="mr-4">
-        <span
-            class="home"
-            @click="navigateTo({name: 'root'})">
-            seekSpace
-            </span>
+      <router-link
+        class="home"
+        tag="span"
+        :to="{
+          name: 'root'
+        }">
+        seekSpace
+      </router-link>
     </v-toolbar-title>
     <v-toolbar-items>
-        <v-btn
-            flat
-            @click="navigateTo({name:'journey'})">
-            browse
-        </v-btn>
+      <v-btn
+        flat
+        :to="{
+          name:'journey'
+        }">
+        browse
+      </v-btn>
     </v-toolbar-items>
     <v-spacer></v-spacer>
-    <v-toolbar-items>
+      <v-toolbar-items>
         <v-btn
-            v-if="!$store.state.isUserLoggedIn"
-            flat
-            @click="navigateTo({name:'login'})">
-            login
+          v-if="!$store.state.isUserLoggedIn"
+          flat
+        :to="{
+          name:'login'
+        }">
+          login
         </v-btn>
         <v-btn
-            v-if="!$store.state.isUserLoggedIn"
-            flat
-            @click="navigateTo({name:'register'})">sign up
-            <!--<router-link to="register">sign up</router-link>-->
+          v-if="!$store.state.isUserLoggedIn"
+          flat
+          :to="{
+            name:'register'
+          }">
+          sign up
         </v-btn>
         <v-btn
-            v-if="$store.state.isUserLoggedIn"
-            flat
-            @click="logout">log out
+          v-if="$store.state.isUserLoggedIn"
+          flat
+          @click="logout">log out
         </v-btn>
-    </v-toolbar-items>
-    </v-toolbar>
+      </v-toolbar-items>
+  </v-toolbar>
 </template>
 
 <script>
 export default {
   methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    },
     logout () {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)

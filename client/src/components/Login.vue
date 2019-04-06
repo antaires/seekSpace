@@ -13,7 +13,7 @@
           v-model="password"
         ></v-text-field>
           <br>
-          <div class="error" v-html="error" />
+          <div class="danger-alert" v-html="error" />
           <br>
           <v-btn
             class="cyan"
@@ -46,6 +46,9 @@ export default {
         // use response to call action
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'journey'
+        })
       } catch (error) {
         //  what is returned from axios, error is message we defined
         this.error = error.response.data.error
@@ -59,7 +62,4 @@ export default {
 </script>
 
 <style scoped>
-.error {
-  color: red;
-}
 </style>

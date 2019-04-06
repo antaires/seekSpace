@@ -2,13 +2,15 @@
   <panel title = "The Journey Awaits">
   <v-btn
       slot="action"
-      @click="navigateTo({name: 'journey-add'})"
       class="cyan accent-2"
       light
       absolute
       right
       middle
-      fab>
+      fab
+      :to="{
+        name:'journey-add'
+      }">
       <v-icon>add</v-icon>
   </v-btn>
   <div v-for="place in journey"
@@ -30,12 +32,12 @@
           <v-btn
           dark
           class="cyan"
-          @click="navigateTo({
-              name: 'place',
-              params: {
+          :to="{
+            name: 'place',
+            params: {
               placeId: place.id
-              }
-          })">
+            }
+          }">
           view
           </v-btn>
 
@@ -69,9 +71,6 @@ export default {
     }
   },
   methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
   },
   // watch for change in search query string
   watch: {
