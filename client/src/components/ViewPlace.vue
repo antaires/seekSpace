@@ -38,20 +38,44 @@
         <v-icon>edit</v-icon>
       </v-btn>
 
+      <v-btn
+        v-if="isUserLoggedIn && !isBookmarked"
+        slot="action"
+        class="cyan accent-2"
+        @click="bookmark"
+        light
+        absolute
+        large
+        fab>
+        <v-icon>save</v-icon>
+      </v-btn>
+
+      <v-btn
+        v-if="isUserLoggedIn && isBookmarked"
+        slot="action"
+        class="cyan accent-2"
+        @click="unbookmark"
+        light
+        absolute
+        left
+        fab>
+        <v-icon>remove</v-icon>
+      </v-btn>
+
     </v-layout>
 
-    <div>
+    <!--<div>
       <div class="place-video">
-        <panel title="Sneak Peak">
-          <!--<youtube
+        <panel title="Sneak Peak">->
+          <youtube
             :video-id="youtubeID"
             :player-width="640"
             :player-height="390">
-          </youtube>-->
+          </youtube>
         </panel>
-        <!--Youtube :youtubeID="place.youtubeID" /-->
+        <Youtube :youtubeID="place.youtubeID" /
       </div>
-    </div>
+    </div>-->
   </panel>
 
 </template>
@@ -59,19 +83,33 @@
 <script>
 import JourneyService from '@/services/JourneyService'
 import Panel from '@/components/Panel'
+import {mapState} from 'vuex'
+import BookmarksService from '@/services/BookmarksService'
 // import Youtube from '@/components/Youtube'
 // import Youtube from 'vue-youtube-embed'
 
 export default {
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
+  },
   data () {
     return {
-      place: {}
+      place: {},
+      isBookmarked: false
     }
   },
   async mounted () {
     // Grap the placeId when user clicks on a view button
     const placeId = this.$store.state.route.params.placeId
     this.place = (await JourneyService.show(placeId)).data
+    const bookmark = (await BookmarksService.index({
+      placeId: 1,
+      userId: 1
+    })).data
+    // caste bookmark to true or false if it is defined
+    this.isBookmarked = !!bookmark
   },
   // props: [
   // 'youtubeID'
@@ -81,6 +119,12 @@ export default {
     Panel
   },
   methods: {
+    bookmark () {
+      console.log('bookmark')
+    },
+    unbookmark () {
+
+    }
   }
 }
 </script>
