@@ -2,12 +2,14 @@
 const {
   sequelize,
   Place,
-  User
+  User,
+  Bookmark
 } = require('../src/models')
 
 const Promise = require('bluebird')
 const places = require('./places.json')
 const users = require('./users.json')
+const bookmarks = require('./bookmarks.json')
 
 // clear database
 sequelize.sync({ force: true})
@@ -22,6 +24,12 @@ sequelize.sync({ force: true})
     await Promise.all(
       places.map(place => {
         Place.create(place)
+      })
+    )
+
+    await Promise.all(
+      bookmarks.map(bookmark => {
+        Bookmark.create(bookmark)
       })
     )
   })
