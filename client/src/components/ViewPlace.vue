@@ -39,10 +39,10 @@
       </v-btn>
 
       <v-btn
-        v-if="isUserLoggedIn && !isBookmarked"
+        v-if="isUserLoggedIn && !bookmark"
         slot="action"
         class="cyan accent-2"
-        @click="bookmark"
+        @click="setAsBookmark"
         light
         absolute
         large
@@ -51,10 +51,10 @@
       </v-btn>
 
       <v-btn
-        v-if="isUserLoggedIn && isBookmarked"
+        v-if="isUserLoggedIn && bookmark"
         slot="action"
         class="cyan accent-2"
-        @click="unbookmark"
+        @click="unsetAsBookmark"
         light
         absolute
         left
@@ -97,19 +97,31 @@ export default {
   data () {
     return {
       place: {},
-      isBookmarked: false
+      bookmark: null
+    }
+  },
+  watch: {
+    async place () {
+      if (!this.isUserLoggedIn) {
+        return
+      }
+      try {
+        // Only needed if user logged in
+        this.bookmark = (await BookmarksService.index({
+          // placeId: placeId
+          placeId: this.place.id,
+          // dynamically set user id
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err + 'issue with ViewPlace')
+      }
     }
   },
   async mounted () {
     // Grap the placeId when user clicks on a view button
     const placeId = this.$store.state.route.params.placeId
     this.place = (await JourneyService.show(placeId)).data
-    const bookmark = (await BookmarksService.index({
-      placeId: 1,
-      userId: 1
-    })).data
-    // caste bookmark to true or false if it is defined
-    this.isBookmarked = !!bookmark
   },
   // props: [
   // 'youtubeID'
@@ -119,11 +131,24 @@ export default {
     Panel
   },
   methods: {
-    bookmark () {
-      console.log('bookmark')
+    async setAsBookmark () {
+      // Save bookmark data
+      try {
+        this.bookmark = (await BookmarksService.post({
+          placeId: this.place.id,
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err + 'Could not save bookmark data')
+      }
     },
-    unbookmark () {
-
+    async unsetAsBookmark () {
+      try {
+        await BookmarksService.delete(this.bookmark.id)
+        this.bookmark = null
+      } catch (err) {
+        console.log(err + 'Could not delete bookmark data')
+      }
     }
   }
 }
