@@ -6,6 +6,9 @@
 </template>
 
 <script>
+</script>
+
+<script>
 /* eslint-disable no-unused-vars */
 import Game from './Game'
 /* eslint-enable no-unused-vars */

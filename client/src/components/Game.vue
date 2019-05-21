@@ -3,11 +3,11 @@
 </template>
 
 <script>
+/* eslint-disable */
 /* eslint-disable no-unused-vars */
 import 'pixi'
 import 'p2'
 import Phaser from 'phaser'
-/* eslint-enable no-unused-vars */
 
 export default{
   name: 'game',
