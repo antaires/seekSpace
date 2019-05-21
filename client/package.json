@@ -16,6 +16,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash": "^4.17.11",
+    "p2": "^0.7.1",
+    "phaser": "^3.16.2",
+    "phaser-ce": "^2.12.0",
+    "pixi": "^0.3.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-youtube-embed": "^2.2.1",
@@ -53,6 +57,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
+    "expose-loader": "^0.7.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",

@@ -7,6 +7,7 @@ import Journey from '@/components/Journey/Index'
 import AddJourney from '@/components/AddJourney'
 import EditJourney from '@/components/EditJourney'
 import ViewPlace from '@/components/ViewPlace'
+import Game from '@/components/PlayGame'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/journey/:placeId',
       name: 'place',
       component: ViewPlace
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: Game
     },
     {
       // If user tries to navigate to path that doesn't exist, redirect them to main page
