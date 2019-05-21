@@ -6,7 +6,7 @@
 /* eslint-disable no-unused-vars */
 import 'pixi'
 import 'p2'
-import Phaser from 'phaser'
+import Phaser from 'phaser.min.js'
 /* eslint-enable no-unused-vars */
 
 export default{

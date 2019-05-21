@@ -1,21 +1,21 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
-const webpack = require('webpack')
+const  = require('')
 const config = require('../config')
-const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const merge = require('-merge')
+const baseConfig = require('./.base.conf')
+const CopyPlugin = require('copy--plugin')
+const HtmlPlugin = require('html--plugin')
+const ExtractTextPlugin = require('extract-text--plugin')
+const OptimizeCSSPlugin = require('optimize-css-assets--plugin')
+const UglifyJsPlugin = require('uglifyjs--plugin')
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : require('../config/prod.env')
 
-const webpackConfig = merge(baseWebpackConfig, {
+const Config = merge(baseConfig, {
   module: {
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
@@ -31,7 +31,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
-    new webpack.DefinePlugin({
+    new .DefinePlugin({
       'process.env': env
     }),
     new UglifyJsPlugin({
@@ -47,9 +47,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
-      // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
+      // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by .
       // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
-      // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
+      // increasing file size: https://github.com/vuejs-templates//issues/1110
       allChunks: true,
     }),
     // Compress extracted CSS. We are using this plugin so that possible
@@ -61,8 +61,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
+    // see https://github.com/ampedandwired/html--plugin
+    new HtmlPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
@@ -79,11 +79,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency'
     }),
     // keep module.id stable when vendor modules does not change
-    new webpack.HashedModuleIdsPlugin(),
+    new .HashedModuleIdsPlugin(),
     // enable scope hoisting
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    new .optimize.ModuleConcatenationPlugin(),
     // split vendor js into its own file
-    new webpack.optimize.CommonsChunkPlugin({
+    new .optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks (module) {
         // any required modules inside node_modules are extracted to vendor
@@ -96,16 +96,16 @@ const webpackConfig = merge(baseWebpackConfig, {
         )
       }
     }),
-    // extract webpack runtime and module manifest to its own file in order to
+    // extract  runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
-    new webpack.optimize.CommonsChunkPlugin({
+    new .optimize.CommonsChunkPlugin({
       name: 'manifest',
       minChunks: Infinity
     }),
     // This instance extracts shared chunks from code splitted chunks and bundles them
     // in a separate chunk, similar to the vendor chunk
-    // see: https://webpack.js.org/plugins/commons-chunk-plugin/#extra-async-commons-chunk
-    new webpack.optimize.CommonsChunkPlugin({
+    // see: https://.js.org/plugins/commons-chunk-plugin/#extra-async-commons-chunk
+    new .optimize.CommonsChunkPlugin({
       name: 'app',
       async: 'vendor-async',
       children: true,
@@ -113,7 +113,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // copy custom static assets
-    new CopyWebpackPlugin([
+    new CopyPlugin([
       {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
@@ -124,10 +124,10 @@ const webpackConfig = merge(baseWebpackConfig, {
 })
 
 if (config.build.productionGzip) {
-  const CompressionWebpackPlugin = require('compression-webpack-plugin')
+  const CompressionPlugin = require('compression--plugin')
 
-  webpackConfig.plugins.push(
-    new CompressionWebpackPlugin({
+  Config.plugins.push(
+    new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
       test: new RegExp(
@@ -142,8 +142,8 @@ if (config.build.productionGzip) {
 }
 
 if (config.build.bundleAnalyzerReport) {
-  const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-  webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+  const BundleAnalyzerPlugin = require('-bundle-analyzer').BundleAnalyzerPlugin
+  Config.plugins.push(new BundleAnalyzerPlugin())
 }
 
-module.exports = webpackConfig
+module.exports = Config

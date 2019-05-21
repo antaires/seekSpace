@@ -1,16 +1,21 @@
 /* eslint-disable */
 <template>
   <div>
-    <Game />
   </div>
 </template>
 
 <script>
-/* eslint-disable no-unused-vars */
-import Game from './Game'
-/* eslint-enable no-unused-vars */
+</script>
 
-export default {
+<script>
+/* eslint-disable no-unused-vars */
+/* import Game from './Game' */
+/* eslint-enable no-unused-vars
+
+put <Game/> back between <div> </div>
+
+*/
+/* export default {
   name: 'game',
   components: {
     'Game': Game
@@ -20,7 +25,7 @@ export default {
       msg: 'The Unsettling Adventures of the Creature from Farout'
     }
   }
-}
+} */
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
