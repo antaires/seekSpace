@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     feature: DataTypes.STRING,
     activity: DataTypes.STRING,
     imageURL: DataTypes.STRING,
-    youtubeID: DataTypes.STRING
   })
 
   return Place

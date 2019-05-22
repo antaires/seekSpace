@@ -4,6 +4,10 @@
       label="search by location, activity or feature"
       v-model="search"
     ></v-text-field>
+      <v-btn color="cyan">Show Activities By Solar System</v-btn>
+      <v-btn color="cyan">Show Safe Planets For Humans</v-btn>
+      <v-btn color="cyan">Order By Activity</v-btn>
+
   </panel>
 </template>
 
