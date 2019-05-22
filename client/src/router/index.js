@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
@@ -57,6 +59,6 @@ export default new Router({
       // If user tries to navigate to path that doesn't exist, redirect them to main page
       path: '*',
       redirect: 'root'
-    }
+    },
   ]
 })
