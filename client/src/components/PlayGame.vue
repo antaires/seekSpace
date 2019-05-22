@@ -10,7 +10,7 @@
 
 <script>
 /* eslint-disable no-unused-vars */
-import Game from './Game'
+import Game from './gameJS'
 /* eslint-enable no-unused-vars */
 
 export default {

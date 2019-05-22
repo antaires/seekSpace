@@ -9,6 +9,7 @@ import EditJourney from '@/components/EditJourney'
 import ViewPlace from '@/components/ViewPlace'
 import Game from '@/components/PlayGame'
 import VueGame from '@/components/VueGame'
+import GameJS from '@/components/gameJS.js'
 
 Vue.use(Router)
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/vueGame',
       name: 'vueGame',
       component: VueGame
+    },
+    {
+      path: '/gameJS',
+      name: 'gameJS',
+      component: GameJS
     },
     {
       // If user tries to navigate to path that doesn't exist, redirect them to main page

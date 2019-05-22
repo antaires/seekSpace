@@ -4,7 +4,7 @@
 </template>
 
 <script>
-var gameScript = require('@/components/game.js')
+var gameScript = require('@/components/gameJS.js')
 export default {
   name: 'game',
   components: gameScript,
