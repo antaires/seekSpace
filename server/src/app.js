@@ -4,6 +4,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const {sequelize} = require('./models');
 const config = require('./config/config');
+// security for headers
+const helmet = require('helmet');
 // node automatically sends HTTP, change to HTTPS for security
 const https = require('https');
 const fs = require('fs');
@@ -17,6 +19,7 @@ const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(helmet());
 
 require('./routes')(app)
 
