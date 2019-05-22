@@ -5,21 +5,13 @@ const morgan = require('morgan');
 const {sequelize} = require('./models');
 const config = require('./config/config');
 // security for headers
-const helmet = require('helmet');
-// node automatically sends HTTP, change to HTTPS for security
-const https = require('https');
-const fs = require('fs');
-const options = {
-	key: fs.readFileSync("/srv/www/keys/my-site-key.pem"),
-	cert: fs.readFileSync("/srv/www/keys/chain.pem")
-  };
+//const helmet = require('helmet');
   
-
 const app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(helmet());
+//app.use(helmet());
 
 require('./routes')(app)
 
