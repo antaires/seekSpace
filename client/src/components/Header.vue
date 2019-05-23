@@ -19,6 +19,15 @@
         browse
       </v-btn>
     </v-toolbar-items>
+        <v-toolbar-items>
+      <v-btn
+        flat
+        :to="{
+          name:'game'
+        }">
+        game
+      </v-btn>
+    </v-toolbar-items>
     <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn

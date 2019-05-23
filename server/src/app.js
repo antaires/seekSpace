@@ -11,6 +11,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 app.disable('x-powered-by')
+// for cookie security
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
 	secret: 's3Cur3',

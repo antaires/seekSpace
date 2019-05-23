@@ -1,23 +1,40 @@
 /* eslint-disable */
 <template>
   <div>
-    <Game />
+    <v-toolbar-items>
+    <a href="http://localhost:3000/game.html"><button>play!</button></a>
+    </v-toolbar-items>
   </div>
 </template>
 
 <script>
 /* eslint-disable no-unused-vars */
-import Game from './Game'
+// import Game from './Game'
 /* eslint-enable no-unused-vars */
 
+// export default {
+//  name: 'game',
+//  components: {
+//    'Game': Game
+//  },
+//  data () {
+//    return {
+//      msg: 'The Unsettling Adventures of the Creature from Farout'
+//    }
+//  }
+// }
 export default {
-  name: 'game',
-  components: {
-    'Game': Game
-  },
-  data () {
-    return {
-      msg: 'The Unsettling Adventures of the Creature from Farout'
+  methods: {
+    logout () {
+      this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setUser', null)
+      // redirect to game
+      this.$router.push(
+        '3000/game.html'
+      )
+    },
+    redirect () {
+      window.location.href = '3000/game.html'
     }
   }
 }
