@@ -2,7 +2,7 @@
 <template>
   <div>
     <v-toolbar-items>
-    <button v-on:click="redirect()">play!</button>
+    <a href="http://localhost:3000/game.html"><button>play!</button></a>
     </v-toolbar-items>
   </div>
 </template>

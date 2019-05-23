@@ -1,3 +1,6 @@
+/* Simple server to host a static HTML game page - this is kept separate from the more secure
+    and advaced server dealing with dynamic pages and the database */
+
 const express = require('express');
 const app = express();
 const port = 3000;
