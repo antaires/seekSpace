@@ -84,7 +84,7 @@
                               <span class="title font-weight-light">Twitter</span>
                             </v-card-title>
                             <v-card-text
-                              class="headline font-weight-bold"
+                              class="title font-weight-light"
                             >"NASA has retrieved the engraved names from the 2020 Mars Rover, come see if your great great grandparents were on it!."</v-card-text>
                             <v-card-actions>
                               <v-list-tile class="grow">
@@ -126,7 +126,7 @@
                             class="headline grey lighten-2"
                             primary-title
                           >Spaceship Fact!</v-card-title>
-                          <v-card-text>This spaceship was first designed in 2019 (over 190 years ago!) by NASA scientists but the technology was lacking to make such an advanced piece of tech.</v-card-text>
+                          <v-card-text class="fact_text">This spaceship was first designed in 2019 (over 190 years ago!) by NASA scientists but the technology was lacking to make such an advanced piece of tech.</v-card-text>
                           <v-divider></v-divider>
                           <v-card-actions>
                             <v-spacer></v-spacer>
@@ -149,7 +149,7 @@
                             class="headline grey lighten-2"
                             primary-title
                           >Astronaut Food Fact!</v-card-title>
-                          <v-card-text>Early astronauts were confined to eating freeze dried foods but today we have technology to provide filet mignon OUTSIDE the spacecraft!</v-card-text>
+                          <v-card-text class="fact_text">Early astronauts were confined to eating freeze dried foods but today we have technology to provide filet mignon OUTSIDE the spacecraft!</v-card-text>
                           <v-divider></v-divider>
                           <v-card-actions>
                             <v-spacer></v-spacer>
@@ -172,7 +172,7 @@
                             class="headline grey lighten-2"
                             primary-title
                           >Materials Fact!</v-card-title>
-                          <v-card-text>Did you know that that the materials used to make the spacesuits when you go for spacewalks are 16 times thinner than the very first astronaut suits?</v-card-text>
+                          <v-card-text class="fact_text">Did you know that that the materials used to make the spacesuits when you go for spacewalks are 16 times thinner than the very first astronaut suits?</v-card-text>
                           <v-divider></v-divider>
                           <v-card-actions>
                             <v-spacer></v-spacer>
@@ -195,7 +195,7 @@
                             class="headline grey lighten-2"
                             primary-title
                           >Alien Fact!</v-card-title>
-                          <v-card-text>Scientists on board in the lower decks have currently captured 23 unique alien species which are all being carefully studied to find out how their properties allow them to survive in such obscure conditions!</v-card-text>
+                          <v-card-text class="fact_text">Scientists on board in the lower decks have currently captured 23 unique alien species which are all being carefully studied to find out how their properties allow them to survive in such obscure conditions!</v-card-text>
                           <v-divider></v-divider>
                           <v-card-actions>
                             <v-spacer></v-spacer>
@@ -218,7 +218,7 @@
                             class="headline grey lighten-2"
                             primary-title
                           >Distance Fact!</v-card-title>
-                          <v-card-text>Every minute we get 6,000 miles further from the point we were at previously, but because of SpeedOfSound technology, you don't feel a thing!</v-card-text>
+                          <v-card-text class="fact_text">Every minute we get 6,000 miles further from the point we were at previously, but because of SpeedOfSound technology, you don't feel a thing!</v-card-text>
                           <v-divider></v-divider>
                           <v-card-actions>
                             <v-spacer></v-spacer>
@@ -307,6 +307,14 @@ h2 {
 },
 
 text {
+  color: black;
+},
+
+.headline {
+  color: black;
+},
+
+.fact_text {
   color: black;
 },
 

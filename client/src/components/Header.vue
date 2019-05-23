@@ -73,7 +73,7 @@ export default {
 <style scoped>
 
 .header_color {
-    color: cyan;
+    color: rgb(17, 0, 173);
 }
 
 .home {
