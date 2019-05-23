@@ -8,8 +8,12 @@ import AddJourney from '@/components/AddJourney'
 import EditJourney from '@/components/EditJourney'
 import ViewPlace from '@/components/ViewPlace'
 import Game from '@/components/PlayGame'
+import { vsButton, vsSelect, vsPopup } from 'vuesax'
 
 Vue.use(Router)
+Vue.use(vsButton)
+Vue.use(vsSelect)
+Vue.use(vsPopup)
 
 export default new Router({
   routes: [
