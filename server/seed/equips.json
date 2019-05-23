@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Space Jetpack",
+      "type": "Air",
+      "risk": "High",
+      "cost": "20",
+      "activity": "Spacesuit surfing on high winds",
+      "placeId": 1
+    },
+    {
+      "id": 2,
+      "name": "space jetpack",
+      "type": "air",
+      "risk": "high",
+      "cost": "20",
+      "activity": "spacesuit surfing on high winds",
+      "placeId": 2
+    }
+  ]
+  

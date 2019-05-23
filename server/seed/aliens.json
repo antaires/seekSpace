@@ -1,0 +1,17 @@
+[
+    {
+        "id" : 1,
+      "name": "Stevie",
+      "imageURL": "https://pixel.nymag.com/imgs/daily/vulture/2017/12/19/aliens/19-aliens-1.w700.h700.jpg",
+      "diet": "Radioactive Worms",
+      "placeId": 1
+    },
+    {
+        "id": 2,
+      "name": "Dusty",
+      "type": "https://cdn.mos.cms.futurecdn.net/CBwQGAwB88ipPYe6HkKKU-320-80.jpg",
+      "diet": "Space Dust",
+      "placeId": 2
+    }
+  ]
+  

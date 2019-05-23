@@ -1,6 +1,7 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 const JourneyController = require('./controllers/JourneyController')
+const EquipController = require('./controllers/EquipController')
 const BookmarksController = require('./controllers/BookmarksController')
 
 module.exports = (app) => {
@@ -19,6 +20,15 @@ module.exports = (app) => {
     JourneyController.put)
   app.post('/journey',
     JourneyController.post)
+
+  app.get('/journey',
+    EquipController.index)
+  app.get('/journey/:placeId',
+    EquipController.show)
+  app.put('/journey/:placeId',
+    EquipController.put)
+  app.post('/journey',
+    EquipController.post)
 
   app.get('/bookmarks', 
     BookmarksController.index)

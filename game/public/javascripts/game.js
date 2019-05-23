@@ -54,20 +54,9 @@ function create() {
   }
   makeBlock();
 
-  /*// CREATE STATIC PLATFORMS
-  gameState.platforms = this.physics.add.staticGroup();
-  gameState.platforms.create(400, 500, 'platform').setScale(2).refreshBody();
-  gameState.platforms.create(100, 400, 'platform');
-  gameState.platforms.create(700, 400, 'platform');
-  gameState.platforms.create(600, 400, 'platform');*/
-
   // score
   gameState.score = 0;
   gameState.scoreText = this.add.text(16, 16, 'score: 0', {fontSize: '32px', fill:'#000'});
-
-  // NORMAL SPRITE
-  // gameState.player = this.add.sprite(300, 500, 'player');
-  // gameState.player.scale.setTo(10, 10);
 
   // PHYSICS SPRITE
   gameState.player = this.physics.add.sprite(100, 0, 'player');
@@ -85,7 +74,6 @@ function create() {
   this.anims.create({
     key: 'turn',
     frames: [{ key: 'player', frame: 4}],
-    //frames: this.anims.generateFrameNames('turn', {prefix: 'images/player', start: 4, end: 4, suffix: '.png'}),
     frameRate: 20
   });
   this.anims.create({
@@ -121,7 +109,6 @@ function create() {
   }
 
   // star
-  //gameState.star = this.add.image(400, 300, 'star');
   gameState.stars = this.physics.add.group({
     key: 'star',
     repeat: 11,

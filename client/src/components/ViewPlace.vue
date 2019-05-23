@@ -12,6 +12,20 @@
           {{place.activity}}
         </div>
 
+        <div class="place-id">{{place.id}}</div>
+      </v-flex>
+
+      <v-flex>
+        <div class="equip"
+          :key="place.id">
+          <v-layout>
+          <v-flex xs6>
+              <div class="equip-name">
+              {{equip.name}}
+              </div>
+          </v-flex>
+          </v-layout>
+        </div>
       </v-flex>
 
       <v-flex xs6>
@@ -23,11 +37,6 @@
         slot="action"
         :to="{
           name:'journey-edit'
-          // , params () {
-          //  return {
-          //    placeId: place.id
-          //  }
-          // }
         }"
         class="cyan accent-2"
         light
@@ -64,29 +73,16 @@
 
     </v-layout>
 
-    <!--<div>
-      <div class="place-video">
-        <panel title="Sneak Peak">->
-          <youtube
-            :video-id="youtubeID"
-            :player-width="640"
-            :player-height="390">
-          </youtube>
-        </panel>
-        <Youtube :youtubeID="place.youtubeID" /
-      </div>
-    </div>-->
   </panel>
 
 </template>
 
 <script>
 import JourneyService from '@/services/JourneyService'
+import EquipService from '@/services/EquipService'
 import Panel from '@/components/Panel'
 import {mapState} from 'vuex'
 import BookmarksService from '@/services/BookmarksService'
-// import Youtube from '@/components/Youtube'
-// import Youtube from 'vue-youtube-embed'
 
 export default {
   computed: {
@@ -97,7 +93,8 @@ export default {
   data () {
     return {
       place: {},
-      bookmark: null
+      bookmark: null,
+      equip: {}
     }
   },
   watch: {
@@ -122,12 +119,13 @@ export default {
     // Grap the placeId when user clicks on a view button
     const placeId = this.$store.state.route.params.placeId
     this.place = (await JourneyService.show(placeId)).data
+
+    // Grab equipment needed using placeId
+    // const equipId = this.$store.state.route.params.equipId
+    // this.equip = (await EquipService.show(equipId)).data
+    this.equip = (await EquipService.show(placeId)).data
   },
-  // props: [
-  // 'youtubeID'
-  // ],
   components: {
-    // Youtube,
     Panel
   },
   methods: {
