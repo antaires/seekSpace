@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <panel title="Your base on the journey - make it your own!">
     <div class="wrapper" v-bind:style="bgc">
       <div class="content">
         <h1>{{welcome}}</h1>
@@ -259,10 +260,12 @@
         </div>
       </div>
     </div>
+    </panel>
   </div>
 </template>
 
 <script>
+import Panel from '@/components/Panel'
 export default {
   name: 'hello',
   data () {
@@ -294,6 +297,9 @@ export default {
         `which our scientists have prepared for you. See how many of ` +
         `them you didn't know and then quiz your friends and family!`
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>

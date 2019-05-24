@@ -1,9 +1,20 @@
 /* eslint-disable */
 <template>
-  <div>
-    <v-toolbar-items>
-    <a href="http://localhost:3000/game.html"><button>play!</button></a>
-    </v-toolbar-items>
+  <div id="app">
+    <panel title="play the Creature from Far Out!">
+      <v-app>
+          <v-container fill-height>
+            <v-layout row wrap align-center>
+              <v-flex class="text-xs-center">
+                <a href="http://localhost:3000/game.html"><v-button>PLAY!</v-button></a>
+              </v-flex>
+              <v-flex>
+                <img src="../assets/gameSplash.png" alt="">
+              </v-flex>
+            </v-layout>
+          </v-container>
+      </v-app>
+    </panel>
   </div>
 </template>
 
@@ -23,8 +34,17 @@
 //    }
 //  }
 // }
+import Panel from '@/components/Panel'
+const imageLink = require('../assets/seekSpaceSmall.png')
+
 export default {
   methods: {
+    name: 'onepage',
+    data () {
+      return {
+        img: imageLink
+      }
+    },
     logout () {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
@@ -36,6 +56,9 @@ export default {
     redirect () {
       window.location.href = '3000/game.html'
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>
