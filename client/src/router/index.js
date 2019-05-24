@@ -8,6 +8,10 @@ import AddJourney from '@/components/AddJourney'
 import EditJourney from '@/components/EditJourney'
 import ViewPlace from '@/components/ViewPlace'
 import Game from '@/components/PlayGame'
+import Timeline from '@/components/Timeline'
+import Info from '@/components/Info'
+import Rooms from '@/components/Rooms'
+import History from '@/components/History'
 
 Vue.use(Router)
 
@@ -52,6 +56,26 @@ export default new Router({
       path: '/game',
       name: 'game',
       component: Game
+    },
+    {
+      path: '/timeline',
+      name: 'timeline',
+      component: Timeline
+    },
+    {
+      path: '/info',
+      name: 'info',
+      component: Info
+    },
+    {
+      path: '/rooms',
+      name: 'rooms',
+      component: Rooms
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: History
     },
     {
       // If user tries to navigate to path that doesn't exist, redirect them to main page
