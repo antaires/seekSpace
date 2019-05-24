@@ -15,26 +15,36 @@
             convenient launch base, seekSpace quickly expanded into commercial asteroid
             mining, comet deflection, and public-space access programs.
         </p>
+        <v-flex>
+        <v-img contain
+          src="https://static.planetminecraft.com/files/resource_media/screenshot/1325/world2_5744256.jpg"
+          aspect-ratio="1"></v-img>
+        </v-flex>
       </div>
       <div class="present">
         <h3> The Present </h3>
-          <p>
-          500 years later, the company is still going strong thanks to the hard work
+          <p2>500 years later, the company is still going strong thanks to the hard work
           of its team and with support from the public. We are excited to announce
           the innagural flight of the colony ship Charon (we respect that Pluto does
           things a little differently).
-        </p>
+        </p2>
+        <div class="spacer"></div>
+        <v-img contain
+          src="https://www.juancole.com/images/2018/03/a-prototype-mars-colony-in-the-m-750x422.jpg"
+          aspect-ratio="1"></v-img>
       </div>
       <div class="future">
-        <h3> The Future </h3>
-          <p>
-          With the present success of the company and the newly invented Pimko
+        <h4> The Future </h4>
+          <p3>With the present success of the company and the newly invented Pimko
           engine, seekSpace has a bright future. We promise to continue to push
           into the great frontier of space, catologue our discoveries as open
           source publicatoins in Open Science Direct, and ferry the citizens of
           the modern Hegemony to the expanse of new planets we may soon call
           home.
-        </p>
+          </p3>
+        <div class="spacer"></div>
+        <v-img contain src="https://vignette.wikia.nocookie.net/macrossfrontier/images/f/f2/Macross_fleet.jpg/revision/latest?cb=20120916013151">
+        </v-img>
       </div>
     </div>
   </panel>
@@ -73,21 +83,20 @@ export default {
   background-color: rgb(36, 31, 112);
   font-family: verdana;
   font-size: 100%;
-  padding: 30px
 }
 .present {
   color: rgb(255, 255, 255);
   background-color: rgb(59, 52, 153);
   font-family: verdana;
   font-size: 100%;
-  padding: 30px
-
 }
 .future {
   color: rgb(255, 255, 255);
   background-color: rgb(112, 106, 199);
   font-family: verdana;
   font-size: 100%;
-  padding: 30px
+}
+.spacer {
+  padding: 1px
 }
 </style>
