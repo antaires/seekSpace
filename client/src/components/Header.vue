@@ -28,6 +28,42 @@
         game
       </v-btn>
     </v-toolbar-items>
+    <v-toolbar-items>
+            <v-btn
+        flat
+        :to="{
+          name:'timeline'
+        }">
+        timeline
+      </v-btn>
+    </v-toolbar-items>
+        <v-toolbar-items>
+            <v-btn
+        flat
+        :to="{
+          name:'rooms'
+        }">
+        rooms
+      </v-btn>
+    </v-toolbar-items>
+        <v-toolbar-items>
+            <v-btn
+        flat
+        :to="{
+          name:'history'
+        }">
+        history
+      </v-btn>
+    </v-toolbar-items>
+    <v-toolbar-items>
+      <v-btn
+        flat
+        :to="{
+          name:'info'
+        }">
+        info
+      </v-btn>
+    </v-toolbar-items>
     <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn
