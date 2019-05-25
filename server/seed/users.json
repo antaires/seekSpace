@@ -1,6 +1,17 @@
 [
   {
     "email": "testing@gmail.com",
-    "password": "123456789"
+    "password": "123456789",
+    "isAdmin" : 1
+  },
+  {
+    "email": "test@hotmail.com",
+    "password": "123456789",
+    "isAdmin" : 0
+  },
+  {
+    "email": "admin@hotmail.com",
+    "password": "123456789",
+    "isAdmin" : 1
   }
 ]

@@ -1,5 +1,12 @@
 <template>
   <panel title = "The Journey Awaits">
+  <div v-if="!$store.state.isUserLoggedIn">
+    <span>
+      Login or Sign Up to see our exciting activities!
+    </span>
+  </div>
+
+  <div v-if="$store.state.isUserLoggedIn">
   <v-btn
       slot="action"
       class="cyan accent-2"
@@ -49,6 +56,7 @@
 
       </v-layout>
 
+  </div>
   </div>
   <h3> explore the mysteries of the cosmos </h3>
   <p>

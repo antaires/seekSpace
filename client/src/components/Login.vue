@@ -46,6 +46,7 @@ export default {
         // use response to call action
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$store.dispatch('setAdmin', response.data.isAdmin)
         this.$router.push({
           name: 'journey'
         })

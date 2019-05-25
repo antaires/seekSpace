@@ -7,6 +7,7 @@ const config = require('./config/config')
 const session = require('express-session')
 
 const app = express();
+
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());

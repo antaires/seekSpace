@@ -39,6 +39,7 @@
     </div>
 
     <v-btn
+      v-if="$store.state.isAdmin"
       dark
       class="cyan"
       @click="create">

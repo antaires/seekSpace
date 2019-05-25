@@ -20,14 +20,10 @@
 
       <!--<only visible for admin -->
       <v-btn
+        v-if="$store.state.isAdmin"
         slot="action"
         :to="{
           name:'journey-edit'
-          // , params () {
-          //  return {
-          //    placeId: place.id
-          //  }
-          // }
         }"
         class="cyan accent-2"
         light
