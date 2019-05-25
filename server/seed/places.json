@@ -4,35 +4,45 @@
     "feature": "diamond rain",
     "activity": "spacesuit surfing on high winds",
     "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
-    "youtubeID": "4drKqLfWNas"
+    "youtubeID": "4drKqLfWNas",
+    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+    "equip" : "Spacesuit, Wind kit, Extra Air Tank"
   },
   {
       "name": "Titan",
       "feature": "alien atmosphere",
       "activity": "submarine safari through the icy depths of the internal ocean",
       "imageURL": "https://mk0astronomynow9oh6g.kinstacdn.com/wp-content/uploads/2015/12/PIA20016-768x768.jpg",
-      "youtubeID": "Td0KjzcsxNU"
+      "youtubeID": "Td0KjzcsxNU",
+      "detail": "Titan, which has a diameter 50 percent larger than our Earth's moon, is one of the largest natural sateliites in our solar system",
+      "equip" : "Camera, Comfy shoes"
   },
   {
       "name": "Venus",
       "feature": "floating cities",
       "activity": "fly through the upper atmosphere in a wingsuit",
       "imageURL": "http://cdn.gospelherald.com/data/images/full/8738/nasa-venus-mission.jpg",
-      "youtubeID": "35y-f5X71Ck"
+      "youtubeID": "35y-f5X71Ck",
+      "detail": "Atompshereic pressure on Venus is a whopping 92 times what it is on Earth",
+      "equip": "Wingsuit, Air Tanks, Medical Card"
   },
   {
     "name": "Farout",
     "feature": "most distant object in the solar system",
     "activity": "view the sun through the head of a needle",
     "imageURL": "https://thumbs-prod.si-cdn.com/HARoqogoyPhxS8lBGHpEmFX13zw=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/85/6c/856ca3d7-35f2-4c15-9095-b232c1351daf/farout.jpg",
-    "youtubeID": "8TCtUJip070"
+    "youtubeID": "8TCtUJip070",
+    "detail": "Newly discovered and mysterious",
+    "equip": "Camera, Comfy Shoes, Nargle Coins for the View Slot Machine"
   },
   {
     "name": "Saturn",
     "feature": "raging storm twice the size of Earth",
     "activity": "view the swirling chaos and raw power of nature",
     "imageURL": "https://www.extremetech.com/wp-content/uploads/2013/04/744808main_pia14944-full_full-640x640.jpg",
-    "youtubeID": "X2SFlAA1TgI"
+    "youtubeID": "X2SFlAA1TgI",
+    "detail": "Saturn has 150 moons!",
+    "equip": "Camera, Light-Orb-Registered Headgear (optional)"
   }
 
 ]
