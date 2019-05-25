@@ -12,6 +12,14 @@
           {{place.activity}}
         </div>
 
+        <div class="place-detail">
+          {{place.detail}}
+        </div>
+
+        <div class="place-equip">
+          {{place.equip}}
+        </div>
+
       </v-flex>
 
       <v-flex xs6>
@@ -59,18 +67,6 @@
 
     </v-layout>
 
-    <!--<div>
-      <div class="place-video">
-        <panel title="Sneak Peak">->
-          <youtube
-            :video-id="youtubeID"
-            :player-width="640"
-            :player-height="390">
-          </youtube>
-        </panel>
-        <Youtube :youtubeID="place.youtubeID" /
-      </div>
-    </div>-->
   </panel>
 
 </template>
@@ -80,8 +76,6 @@ import JourneyService from '@/services/JourneyService'
 import Panel from '@/components/Panel'
 import {mapState} from 'vuex'
 import BookmarksService from '@/services/BookmarksService'
-// import Youtube from '@/components/Youtube'
-// import Youtube from 'vue-youtube-embed'
 
 export default {
   computed: {
@@ -119,9 +113,6 @@ export default {
     const placeId = this.$store.state.route.params.placeId
     this.place = (await JourneyService.show(placeId)).data
   },
-  // props: [
-  // 'youtubeID'
-  // ],
   components: {
     // Youtube,
     Panel
