@@ -15,7 +15,8 @@ export default new Vuex.Store({
     state: {
         token: null,
         user: null,
-        isUserLoggedIn: false
+        isUserLoggedIn: false,
+        isAdmin: false
     },
     mutations: {
         setToken (state, token){
@@ -28,15 +29,25 @@ export default new Vuex.Store({
         },
         setUser (state, user){
             state.user = user
+        },
+        setAdmin (state, admin){
+            console.log("setting admin in store: " + admin)
+            if (admin) {
+                state.isAdmin = true
+            } else {
+                state.isAdmin = false
+            }
         }
     },
     actions: {
-        //event names basically
         setToken({commit}, token){
             commit('setToken', token)
         },
         setUser({commit}, user){
             commit('setUser', user)
+        },
+        setAdmin({commit}, admin){
+            commit('setAdmin', admin)
         }
     }
 })

@@ -38,7 +38,7 @@
       {{error}}
     </div>
 
-    <v-btn
+    <v-btn v-if="$store.state.isAdmin && $store.state.isUserLoggedIn"
       dark
       class="cyan"
       @click="save">

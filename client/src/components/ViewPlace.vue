@@ -19,15 +19,10 @@
       </v-flex>
 
       <!--<only visible for admin -->
-      <v-btn
+      <v-btn v-if="$store.state.isAdmin && $store.state.isUserLoggedIn"
         slot="action"
         :to="{
           name:'journey-edit'
-          // , params () {
-          //  return {
-          //    placeId: place.id
-          //  }
-          // }
         }"
         class="cyan accent-2"
         light
@@ -91,7 +86,8 @@ import BookmarksService from '@/services/BookmarksService'
 export default {
   computed: {
     ...mapState([
-      'isUserLoggedIn'
+      'isUserLoggedIn',
+      'isAdmin'
     ])
   },
   data () {

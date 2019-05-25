@@ -1,6 +1,6 @@
 <template>
   <panel title = "The Journey Awaits">
-  <v-btn
+  <v-btn v-if="$store.state.isAdmin && $store.state.isUserLoggedIn"
       slot="action"
       class="cyan accent-2"
       light
