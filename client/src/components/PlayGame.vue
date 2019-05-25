@@ -6,7 +6,7 @@
           <v-container fill-height>
             <v-layout row wrap align-center>
               <v-flex class="text-xs-center">
-                <a href="http://localhost:3000/game.html"><v-button>PLAY!</v-button></a>
+                <a href="http://localhost:3000/game.html"><v-btn>PLAY!</v-btn></a>
               </v-flex>
               <v-flex>
                 <img src="../assets/gameSplash.png" alt="">
@@ -19,27 +19,12 @@
 </template>
 
 <script>
-/* eslint-disable no-unused-vars */
-// import Game from './Game'
-/* eslint-enable no-unused-vars */
 
-// export default {
-//  name: 'game',
-//  components: {
-//    'Game': Game
-//  },
-//  data () {
-//    return {
-//      msg: 'The Unsettling Adventures of the Creature from Farout'
-//    }
-//  }
-// }
 import Panel from '@/components/Panel'
 const imageLink = require('../assets/seekSpaceSmall.png')
 
 export default {
   methods: {
-    name: 'onepage',
     data () {
       return {
         img: imageLink

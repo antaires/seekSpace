@@ -33,6 +33,7 @@ export default {
     return {
       email: '',
       password: '',
+      admin: false,
       error: null
     }
   },
@@ -41,11 +42,14 @@ export default {
       try {
         const response = await AuthenticationService.login({
           email: this.email,
-          password: this.password
+          password: this.password,
+          admin: this.admin
         })
         // use response to call action
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$store.dispatch('setAdmin', response.data.user.admin)
+        console.log('setting admin in login: ' + response.data.user.admin)
         this.$router.push({
           name: 'journey'
         })
