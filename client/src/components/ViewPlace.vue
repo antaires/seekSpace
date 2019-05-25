@@ -9,14 +9,17 @@
           {{place.feature}}
         </div>
         <div class="place-activity">
+          <span> Activity: </span>
           {{place.activity}}
         </div>
 
         <div class="place-detail">
+          <span> Fun fact: </span>
           {{place.detail}}
         </div>
 
         <div class="place-equip">
+          <span> Equipment needed: </span>
           {{place.equip}}
         </div>
 
@@ -157,11 +160,23 @@ export default {
 }
 
 .place-activity {
+  padding: 20px;
   font-size: 18px;
 }
 
 .place-imageURL {
   width: 100%;
   margin: 0 auto
+}
+
+.place-detail {
+  padding: 20px;
+  font-size: 18px;
+
+}
+
+.place-equip {
+  font-size: 18px;
+  padding: 20px;
 }
 </style>
