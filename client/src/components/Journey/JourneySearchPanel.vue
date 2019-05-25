@@ -1,5 +1,5 @@
 <template>
-  <panel title="search">
+  <panel title="search" v-if="$store.state.isUserLoggedIn">
     <v-text-field
       label="search by location, activity or feature"
       v-model="search"

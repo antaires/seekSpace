@@ -1,60 +1,68 @@
 <template>
-  <panel title = "The Journey Awaits">
-  <v-btn v-if="$store.state.isAdmin && $store.state.isUserLoggedIn"
-      slot="action"
-      class="cyan accent-2"
-      light
-      absolute
-      right
-      middle
-      fab
-      :to="{
-        name:'journey-add'
-      }">
-      <v-icon>add</v-icon>
-  </v-btn>
-  <div v-for="place in journey"
-      class="place"
-      :key="place.id">
-
-      <v-layout>
-      <v-flex xs6>
-          <div class="place-name">
-          {{place.name}}
-          </div>
-          <div class="place-feature">
-          {{place.feature}}
-          </div>
-          <div class="place-activity">
-          {{place.activity}}
-          </div>
-
-          <v-btn
-          dark
-          class="cyan"
+  <div>
+    <div v-if="!$store.state.isUserLoggedIn">
+      <Panel title="Login or Sign up to view the trip itinerary">
+      </Panel>
+    </div>
+    <div v-if="$store.state.isUserLoggedIn">
+      <panel title = "The Journey Awaits">
+      <v-btn v-if="$store.state.isAdmin && $store.state.isUserLoggedIn"
+          slot="action"
+          class="cyan accent-2"
+          light
+          absolute
+          right
+          middle
+          fab
           :to="{
-            name: 'place',
-            params: {
-              placeId: place.id
-            }
+            name:'journey-add'
           }">
-          view
-          </v-btn>
+          <v-icon>add</v-icon>
+      </v-btn>
+      <div v-for="place in journey"
+          class="place"
+          :key="place.id">
 
-      </v-flex>
+          <v-layout>
+          <v-flex xs6>
+              <div class="place-name">
+              {{place.name}}
+              </div>
+              <div class="place-feature">
+              {{place.feature}}
+              </div>
+              <div class="place-activity">
+              {{place.activity}}
+              </div>
 
-      <v-flex xs6>
-          <img class="place-imageURL" :src="place.imageURL"/>
-      </v-flex>
+              <v-btn
+              dark
+              class="cyan"
+              :to="{
+                name: 'place',
+                params: {
+                  placeId: place.id
+                }
+              }">
+              view
+              </v-btn>
 
-      </v-layout>
+          </v-flex>
 
+          <v-flex xs6>
+              <img class="place-imageURL" :src="place.imageURL"/>
+          </v-flex>
+
+          </v-layout>
+
+      </div>
+      <h3> explore the mysteries of the cosmos </h3>
+      <p>
+          see wonders of which our ancestors could only dream
+      </p>
+      </panel>
+    </div>
   </div>
-  <h3> explore the mysteries of the cosmos </h3>
-  <p>
-      see wonders of which our ancestors could only dream
-  </p>
-  </panel>
 </template>
 
 <script>
