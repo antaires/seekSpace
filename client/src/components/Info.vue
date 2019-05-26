@@ -11,7 +11,7 @@
 
 <script>
 import Panel from '@/components/Panel'
-const imageLink = require('../assets/seekSpaceSmall.png')
+const imageLink = require('../assets/seekSpaceLogo15.png')
 export default {
   name: 'onepage',
   data () {

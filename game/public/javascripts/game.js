@@ -36,7 +36,7 @@ function preload() {
   this.load.image('star', 'images/star.png');
   this.load.image('bomb', 'images/bomb.png');
   this.load.image('ground', 'images/ground.png');
-  this.load.spritesheet('player', 'images/player.png', {frameWidth: 32, frameHeight: 48});
+  this.load.spritesheet('player', 'images/player2.png', {frameWidth: 32, frameHeight: 48});
 }
 
 // convert assets to form usable by Phaser
