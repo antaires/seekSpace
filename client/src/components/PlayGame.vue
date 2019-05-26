@@ -9,7 +9,7 @@
                 <a href="http://localhost:3000/game.html"><v-btn>PLAY!</v-btn></a>
               </v-flex>
               <v-flex>
-                <img src="../assets/gameSplash.png" alt="">
+                <img src="../assets/gameSplashScreen.png" alt="">
               </v-flex>
             </v-layout>
           </v-container>
