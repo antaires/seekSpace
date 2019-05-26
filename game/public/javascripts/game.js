@@ -42,7 +42,7 @@ function preload() {
 // convert assets to form usable by Phaser
 function create() {
   // add background
-  gameState.background = this.add.sprite(400, 300, 'background');
+  gameState.background = this.add.sprite(600, 300, 'background');
   gameState.background.setDisplaySize(1200, 600);
 
   // CREATE MOVING PLATFORMS
