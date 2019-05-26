@@ -4,7 +4,7 @@
       <v-container>
         <a href="#"><img v-bind:src="img" alt="" class="logo"></a>
       </v-container>
-      <span v-once> -- From 2019 onwards: to outerspace and beyound -- {{ msg }}</span>
+      <span v-once> -- From 2019 onwards: to outerspace and beyond -- {{ "" }}</span>
     </panel>
   </div>
 </template>

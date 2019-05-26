@@ -1,6 +1,7 @@
 <template>
   <div>
     <panel title="Select from our many luxurious rooms">
+      <span v-once> -- ALL ROOMS BOOKED! PLEASE CHECK BACK SOON -- {{ "" }}</span>
     </panel>
   </div>
 </template>
