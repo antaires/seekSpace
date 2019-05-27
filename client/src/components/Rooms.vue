@@ -17,6 +17,12 @@
       <div v-if="$store.state.isUserLoggedIn">
       <div v-for="room in rooms" :key="room.roomId">
         <div class="room">
+          <v-btn
+            dark
+            class="cyan"
+            @click="book">
+            book!
+          </v-btn>
           <v-flex>
             <div class="room-name">
               {{room.name}}
@@ -55,6 +61,9 @@ export default {
   async mounted () {
     // do a request to backend for all the rooms
     this.rooms = (await RoomService.index()).data
+  },
+  methods: {
+    book () {}
   }
 }
 </script>
