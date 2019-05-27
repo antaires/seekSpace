@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       unique: true
     },
     admin: DataTypes.INTEGER,
+    room: DataTypes.INTEGER,
     password: DataTypes.STRING
   }, {
     hooks: {

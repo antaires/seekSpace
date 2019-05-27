@@ -2,11 +2,13 @@
   {
     "email": "admin@gmail.com",
     "admin": true,
+    "room": 0,
     "password": "123456789"
   },
   {
     "email": "testing@gmail.com",
     "admin": false,
+    "room": 1,
     "password": "123456789"
   }
 ]
