@@ -16,7 +16,8 @@ export default new Vuex.Store({
         token: null,
         user: null,
         isUserLoggedIn: false,
-        isAdmin: false
+        isAdmin: false,
+        room: 0
     },
     mutations: {
         setToken (state, token){
@@ -37,6 +38,10 @@ export default new Vuex.Store({
             } else {
                 state.isAdmin = false
             }
+        },
+        setRoom (state, room){
+            console.log("setting room in store: " + room)
+            state.room = room
         }
     },
     actions: {
@@ -48,6 +53,9 @@ export default new Vuex.Store({
         },
         setAdmin({commit}, admin){
             commit('setAdmin', admin)
+        },
+        setRoom({commit}, room){
+            commit('setRoom', room)
         }
     }
 })

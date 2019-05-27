@@ -1,0 +1,37 @@
+[
+  {
+    "roomId": 1,
+    "name": "Eros",
+    "feature": "twin bed and en-suite",
+    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
+    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+  },
+  {
+    "roomId": 2,
+    "name": "Andromeda",
+    "feature": "Queen size bed and double-wide galactic view window",
+    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
+    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+  },
+  {
+    "roomId": 3,
+    "name": "Enceladus",
+    "feature": "two full rooms and kitchen",
+    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
+    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+  },
+  {
+    "roomId": 4,
+    "name": "Dione",
+    "feature": "single bed and shared bath",
+    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
+    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+  },
+  {
+    "roomId": 5,
+    "name": "Rhea",
+    "feature": "honeymoon suite",
+    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
+    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+  }
+]

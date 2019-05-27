@@ -34,6 +34,7 @@ export default {
       email: '',
       password: '',
       admin: false,
+      room: 0,
       error: null
     }
   },
@@ -43,13 +44,15 @@ export default {
         const response = await AuthenticationService.login({
           email: this.email,
           password: this.password,
-          admin: this.admin
+          admin: this.admin,
+          room: this.room
         })
         // use response to call action
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
         this.$store.dispatch('setAdmin', response.data.user.admin)
-        console.log('setting admin in login: ' + response.data.user.admin)
+        this.$store.dispatch('setAdmin', response.data.user.room)
+        console.log('setting room in login: ' + response.data.user.room)
         this.$router.push({
           name: 'journey'
         })
