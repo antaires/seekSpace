@@ -23,11 +23,11 @@
       </div>
       <div class="present">
         <h3> The Present </h3>
-          <p2>500 years later, the company is still going strong thanks to the hard work
+          <p>500 years later, the company is still going strong thanks to the hard work
           of its team and with support from the public. We are excited to announce
           the innagural flight of the colony ship Charon (we respect that Pluto does
           things a little differently).
-        </p2>
+        </p>
         <div class="spacer"></div>
         <v-img contain
           src="https://www.juancole.com/images/2018/03/a-prototype-mars-colony-in-the-m-750x422.jpg"
@@ -35,13 +35,13 @@
       </div>
       <div class="future">
         <h4> The Future </h4>
-          <p3>With the present success of the company and the newly invented Pimko
+          <p>With the present success of the company and the newly invented Pimko
           engine, seekSpace has a bright future. We promise to continue to push
           into the great frontier of space, catologue our discoveries as open
           source publicatoins in Open Science Direct, and ferry the citizens of
           the modern Hegemony to the expanse of new planets we may soon call
           home.
-          </p3>
+          </p>
         <div class="spacer"></div>
         <v-img contain src="https://vignette.wikia.nocookie.net/macrossfrontier/images/f/f2/Macross_fleet.jpg/revision/latest?cb=20120916013151">
         </v-img>
