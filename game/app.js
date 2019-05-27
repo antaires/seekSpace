@@ -19,4 +19,4 @@ app.delete('/', (req, res) => res.send('got a DELETE request'))
 // set up express to access the public directory:
 app.use(express.static('public'))
 
-app.listen(port, ()=> console.log(`listening on poart ${port}`));
+app.listen(port, ()=> console.log(`listening on port ${port}`));
