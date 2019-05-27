@@ -51,7 +51,7 @@ export default {
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
         this.$store.dispatch('setAdmin', response.data.user.admin)
-        this.$store.dispatch('setAdmin', response.data.user.room)
+        this.$store.dispatch('setRoom', response.data.user.room)
         console.log('setting room in login: ' + response.data.user.room)
         this.$router.push({
           name: 'journey'
