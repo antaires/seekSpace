@@ -3,35 +3,42 @@
     "roomId": 1,
     "name": "Eros",
     "feature": "twin bed and en-suite",
-    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
-    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+    "imageURL": "https://i.pinimg.com/originals/c6/cb/52/c6cb522cd7bd3c86455ccd525d973e60.jpg",
+    "detail": "perfect for the solitary traveler"
   },
   {
     "roomId": 2,
     "name": "Andromeda",
     "feature": "Queen size bed and double-wide galactic view window",
-    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
-    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+    "imageURL": "https://i.ytimg.com/vi/HT4a060CDQc/maxresdefault.jpg",
+    "detail": "For the working professional, the office space and space view sooths"
   },
   {
     "roomId": 3,
     "name": "Enceladus",
     "feature": "two full rooms and kitchen",
-    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
-    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+    "imageURL": "https://cdna.artstation.com/p/assets/images/images/000/182/264/large/devon-fay-devon-fay-retro-space-common.jpg?1443928062",
+    "detail": "perfect for the whole family"
   },
   {
     "roomId": 4,
     "name": "Dione",
     "feature": "single bed and shared bath",
-    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
-    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
+    "imageURL": "https://i.pinimg.com/originals/7e/0b/7d/7e0b7df6f46784e5f2e9f6e7e257ac60.jpg",
+    "detail": "Compact and orderly, this rooms also allows pets"
   },
   {
     "roomId": 5,
     "name": "Rhea",
     "feature": "honeymoon suite",
-    "imageURL": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/06/14/neptune-planet-space.jpg",
-    "detail": "One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011",
-  }
+    "imageURL": "https://i.pinimg.com/originals/25/75/2f/25752f3e745c4126a81fcd29c013f689.jpg",
+    "detail": "Recently refurbished, this room offers the technical works"
+  },
+  {
+    "roomId": 6,
+    "name": "Io",
+    "feature": "cozy atmosphere and close to the public areas",
+    "imageURL": "https://i.ytimg.com/vi/zcH87kQlXPo/maxresdefault.jpg",
+    "detail": "San cruz - the famous space punk pop band - used this room in 2314"
+}
 ]

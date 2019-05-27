@@ -2,6 +2,7 @@ const AuthenticationController = require('./controllers/AuthenticationController
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 const JourneyController = require('./controllers/JourneyController')
 const BookmarksController = require('./controllers/BookmarksController')
+const RoomController = require('./controllers/RoomController')
 
 module.exports = (app) => {
   app.post('/register',
@@ -10,6 +11,11 @@ module.exports = (app) => {
 
   app.post('/login',
     AuthenticationController.login)
+
+  app.get('/rooms',
+    RoomController.index)
+  app.post('/rooms',
+    RoomController.post)
 
   app.get('/journey',
     JourneyController.index)
