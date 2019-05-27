@@ -1,6 +1,6 @@
 <template>
   <v-layout>
-    <v-flex>
+    <v-flex v-if="$store.state.isAdmin && $store.state.isUserLoggedIn">
     <panel title="Journey Metadata">
       <v-text-field
       label="name"
@@ -45,6 +45,9 @@
       enter
     </v-btn>
 
+    </v-flex>
+    <v-flex v-if="!$store.state.isAdmin || !$store.state.isUserLoggedIn">
+      <span> Oops you shouldn't be here! </span>
     </v-flex>
   </v-layout>
 </template>
