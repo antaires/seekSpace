@@ -3,6 +3,7 @@ const {
   sequelize,
   Place,
   User,
+  Room,
   Bookmark
 } = require('../src/models')
 
@@ -10,6 +11,7 @@ const Promise = require('bluebird')
 const places = require('./places.json')
 const users = require('./users.json')
 const bookmarks = require('./bookmarks.json')
+const rooms = require('./rooms.json')
 
 // clear database
 sequelize.sync({ force: true})
@@ -24,6 +26,12 @@ sequelize.sync({ force: true})
     await Promise.all(
       places.map(place => {
         Place.create(place)
+      })
+    )
+
+    await Promise.all(
+      rooms.map(room => {
+        Room.create(room)
       })
     )
 

@@ -21,7 +21,6 @@
             <div class="room-detail">
               {{room.detail}}
             </div>
-
             <img class="room-imageURL" :src="room.imageURL"/>
           </v-flex>
         </div>
@@ -32,6 +31,7 @@
 </template>
 
 <script>
+import RoomService from '@/services/RoomService'
 import Panel from '@/components/Panel'
 export default {
   components: {
@@ -39,6 +39,8 @@ export default {
   },
   data () {
     return {
+      rooms: null
+      /*
       rooms: [
         {
           roomId: 1,
@@ -76,7 +78,12 @@ export default {
           detail: 'One Nepture year lasts 164.8 Earth years. In fact, since it was discovered in 1846, Nepture has only copmleted 1 year, in 2011'
         }
       ]
+      */
     }
+  },
+  async mounted () {
+    // do a request to backend for all the rooms
+    this.rooms = (await RoomService.index()).data
   }
 }
 </script>
